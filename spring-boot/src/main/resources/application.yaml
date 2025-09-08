@@ -4,9 +4,12 @@ spring:
   application:
     name: spring-boot
   datasource:
-    url: jdbc:postgresql://localhost:5432/testabc
+    url: jdbc:postgresql://localhost:5432/example_spring_boot_2
     username: postgres
     password: password
+  flyway:
+    schemas:
+      - public
   security:
     oauth2:
       resourceserver:

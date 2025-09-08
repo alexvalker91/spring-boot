@@ -24,7 +24,12 @@ public class Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("Hello World");
         Event event = bookingFacade.getEventById(1);
-        System.out.println("Title Kurami: " + event.getTitle());
+        if (event == null) {
+            System.out.println("Title Kurami: event == null");
+        } else {
+            System.out.println("Title Kurami: " + event.getTitle());
+        }
+
         System.out.println("Hello World");
         List<Event> events = bookingFacade.getEventsByTitle("New Title Test", 10, 0);
         System.out.println("Title Kurami: " + events.size());

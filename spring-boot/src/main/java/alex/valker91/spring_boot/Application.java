@@ -7,6 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.List;
+
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
@@ -24,5 +26,7 @@ public class Application implements CommandLineRunner {
         Event event = bookingFacade.getEventById(1);
         System.out.println("Title Kurami: " + event.getTitle());
         System.out.println("Hello World");
+        List<Event> events = bookingFacade.getEventsByTitle("New Title Test", 10, 0);
+        System.out.println("Title Kurami: " + events.size());
     }
 }

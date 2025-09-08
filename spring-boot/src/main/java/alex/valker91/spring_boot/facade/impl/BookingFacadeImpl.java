@@ -127,6 +127,7 @@ public class BookingFacadeImpl implements BookingFacade {
     public boolean cancelTicket(long ticketId) {
         Ticket ticket = ticketService.getById(ticketId);
         long eventId = ticket.getEventId();
+        System.out.println("dafdsf: "+eventId);
         Event event = eventService.getEventById(eventId);
         int ticketPrice = event.getTicketPrice();
         long userId = ticket.getUserId();

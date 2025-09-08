@@ -97,8 +97,8 @@ public class DbTicketServiceImpl implements TicketService {
     private Ticket mapTicketDbToTicket(TicketDb ticketDb) {
         return new TicketImpl(
                 ticketDb.getId(),
-                ticketDb.getEventId(),
                 ticketDb.getUserId(),
+                ticketDb.getEventId(),
                 ticketDb.getPlace(),
                 Ticket.Category.valueOf(ticketDb.getCategory().name())
         );

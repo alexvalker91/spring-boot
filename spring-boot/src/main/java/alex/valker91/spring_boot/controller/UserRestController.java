@@ -23,7 +23,6 @@ public class UserRestController {
         return bookingFacade.getUserById(userId);
     }
 
-
     /*
     Example: GET
     localhost:8081/api/v1/users/email?email=alex@gmail.com

@@ -29,4 +29,19 @@ public class Application implements CommandLineRunner {
         List<Event> events = bookingFacade.getEventsByTitle("New Title Test", 10, 0);
         System.out.println("Title Kurami: " + events.size());
     }
+
+//    // Docker
+//    docker run --name my-keycloak -p 8082:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin -v ./config/keycloak/import:/opt/keycloak/data/import quay.io/keycloak/keycloak:23.0.4 start-dev --import-realm
+//    docker --version
+//
+//    docker stop my-keycloak // остановить
+//    docker rm my-keycloak // удаление контейнера
+//    docker start my-keycloak // запуск
+//
+//    http://localhost:8082/
+//
+//    keycloak:
+//    http://localhost:8082/admin/master/console/#/my-keycloak
+//    user: admin
+//    password: admin
 }

@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8083
 spring:
   application:
     name: spring-boot
@@ -11,8 +11,15 @@ spring:
   flyway:
     schemas:
       - public
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8082/realms/my-keycloak
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://localhost:8082/realms/my-keycloak
+
+sentry:
+  dsn: https://a9b52456cacb8d7e26ddd66524190307@o4511579998781440.ingest.de.sentry.io/4511580930375760
+  traces-sample-rate: 1.0
+  send-default-pii: true
+  debug: true
+  environment: local

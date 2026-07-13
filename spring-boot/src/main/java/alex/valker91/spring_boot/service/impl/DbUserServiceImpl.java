@@ -1,5 +1,6 @@
 package alex.valker91.spring_boot.service.impl;
 
+import io.sentry.spring.jakarta.tracing.SentrySpan;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,6 +30,7 @@ public class DbUserServiceImpl implements UserService {
     private DbUserRepository dbUserRepository;
 
     @Override
+    @SentrySpan("service.getUserById")
     public User getUserById(long userId) {
         LOGGER.log(Level.DEBUG, "Finding an user by id: {}", userId);
         Optional<UserDb> userDbOptional = this.dbUserRepository.findById(userId);

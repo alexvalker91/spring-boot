@@ -2,6 +2,7 @@ package alex.valker91.spring_boot.controller;
 
 import alex.valker91.spring_boot.facade.BookingFacade;
 import alex.valker91.spring_boot.model.User;
+import io.sentry.spring.jakarta.tracing.SentrySpan;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ public class UserRestController {
     localhost:8081/api/v1/users/1
      */
     @GetMapping("/{userId}")
+    @SentrySpan("controller.getUserById")
     public User getUserById(@PathVariable long userId) {
         return bookingFacade.getUserById(userId);
     }

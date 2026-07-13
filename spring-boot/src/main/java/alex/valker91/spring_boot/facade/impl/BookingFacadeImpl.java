@@ -1,5 +1,6 @@
 package alex.valker91.spring_boot.facade.impl;
 
+import io.sentry.spring.jakarta.tracing.SentrySpan;
 import org.springframework.transaction.annotation.Transactional;
 import alex.valker91.spring_boot.facade.BookingFacade;
 import alex.valker91.spring_boot.model.Event;
@@ -34,6 +35,12 @@ public class BookingFacadeImpl implements BookingFacade {
         this.userAccountService = userAccountService;
     }
 
+    @SentrySpan("facade.getUserById")
+    @Override
+    public User getUserById(long userId) {
+        return userService.getUserById(userId);
+    }
+
     @Override
     public Event getEventById(long eventId) {
         return eventService.getEventById(eventId);
@@ -64,10 +71,7 @@ public class BookingFacadeImpl implements BookingFacade {
         return eventService.deleteEvent(eventId);
     }
 
-    @Override
-    public User getUserById(long userId) {
-        return userService.getUserById(userId);
-    }
+
 
     @Override
     public User getUserByEmail(String email) {

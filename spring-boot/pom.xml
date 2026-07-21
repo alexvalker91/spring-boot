@@ -72,14 +72,11 @@
             <scope>test</scope>
         </dependency>
 
-		<!-- Sentry для Spring Boot 3 (jakarta!) -->
 		<dependency>
 			<groupId>io.sentry</groupId>
 			<artifactId>sentry-spring-boot-starter-jakarta</artifactId>
 			<version>7.18.0</version>
 		</dependency>
-
-		<!-- Трейсинг SQL-запросов к БД -->
 		<dependency>
 			<groupId>io.sentry</groupId>
 			<artifactId>sentry-jdbc</artifactId>
